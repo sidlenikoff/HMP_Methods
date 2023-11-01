@@ -110,8 +110,10 @@ namespace HMP_Methods_Tests
             DoubleLinkedList<int> list = new DoubleLinkedList<int>(1, 2, 3, 4, 5, 4);
 
             list.RemoveValue(4);
-
-            Assert.AreEqual("1 2 3 5", list.ToString());
+            list.RemoveValue(1);
+            int last = list.GetLast();
+            Assert.AreEqual(5, last);
+            Assert.AreEqual("2 3 5", list.ToString());
         }
     }
 }
